@@ -1,0 +1,29 @@
+Verific pe rand fiecare endpoint, intai separat, iar apoi combin cererile:
+
+GET
+- ia toate elementele
+- ia doar 1 element din lista
+- incearca sa ia un element care nu se afla in lista
+
+POST
+- adauga un eveniment, verifica statusCode
+- stim din setul precedent de teste daca GET functioneaza asa ca il folosim ca sa verificam existenta noului element
+- adauga un eveniment cu id care exista deja
+- adauga un eveniment fara id
+- adauga un eveniment cu format gresit
+
+PUT
+- modifica un eveniment care exista (verific codul operatiei, iar apoi continutul cu GET)
+- incearca sa foloseasca un id care nu exista
+- modifica id-ul unui eveniment si verifica daca mai poate fi gasit
+
+DELETE
+- sterge un element existent (verifica daca mai apare in lista)
+- foloseste un id care nu exista
+- sterge de mai multe ori acelasi event
+
+Combined
+- modifica un element adaugat cu POST
+- modifica un element sters
+- sterge un element adaugat cu POST
+- sterge un element modificat cu PUT
